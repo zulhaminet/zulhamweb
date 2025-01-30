@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wirdatil Qudsi - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2b6cb0;
+            --bg-color: #f0f4f8;
+            --text-color: #2d3748;
+            --card-bg: white;
+        }
+
+        .dark-mode {
+            --bg-color: #1a202c;
+            --text-color: #e2e8f0;
+            --card-bg: #2d3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .control-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .language-skills {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .language-tag {
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .timeline-item {
+            border-left: 2px solid #e2e8f0;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #2b6cb0;
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            .controls, .social-links {
+                display: none !important;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button class="control-btn" id="darkModeToggle">🌓 Toggle Mode</button>
+        <button class="control-btn" onclick="window.print()">🖨️ Print</button>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <img src="../zulhamweb/public/Foto Profile Cici.jpg" alt="Wirdatil Qudsi" class="profile-photo">
+            <h1>WIRDATIL QUDSI</h1>
+            <p>Curriculum Vitae</p>
+        </header>
+
+        <div class="social-links">
+            <a href="#" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item">📞 0813-6425-9554</div>
+            <div class="contact-item">📧 wirdatilqudsi@gmail.com</div>
+            <div class="contact-item">📍 Jl.Pete III No.189 RT.6 RW.6, Jakarta Selatan</div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Expertise</h2>
+                <ul>
+                    <li>Office Documentation</li>
+                    <li>Customer Service</li>
+                    <li>Japanese Literature</li>
+                    <li>Daily Report</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Education</h2>
+                <p>Bung Hatta University<br>
+                Bachelor Degree (2010-2015)</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Language Skills</h2>
+            <div class="language-skills">
+                <span class="language-tag">Japanese (Active)</span>
+                <span class="language-tag">English (Passive)</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Teaching Experience</h2>
+            <div class="timeline-item">
+                <h3>PPL Asumi Bahasa Asia Center</h3>
+                <p>April 2016 - Present (Part-time)</p>
+                <ul>
+                    <li>Teaching Indonesian to Japanese students</li>
+                    <li>Teaching Japanese to Indonesian students</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h3>IPK Haderama</h3>
+                <p>Juni 2022 - Present (Full-time)</p>
+                <ul>
+                    <li>International Cultural Committee</li>
+                    <li>13th Bung Hatta University</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Private Teaching</h2>
+            <p>Oktober 2018 - Present<br>
+            Teaching Indonesian to Japanese students and teaching Japanese</p>
+        </div>
+    </div>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            darkModeToggle.textContent = document.body.classList.contains('dark-mode') 
+                ? '🌞 Light Mode' 
+                : '🌙 Dark Mode';
+        });
+
+        // Initialize dark mode state
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.textContent = '🌞 Light Mode';
+        }
+    </script>
+</body>
+</html>
