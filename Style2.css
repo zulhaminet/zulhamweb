@@ -1,33 +1,243 @@
-/* General Styles */  
-body {  
-    font-family: 'Poppins', sans-serif;  
-    margin: 0;  
-    padding: 0;  
-    color: #333;  
-    background-color: #f7f7f7;  
-    line-height: 1.6;  
-}  
+:root {
+    --primary: #2a3b4d;
+    --secondary: #4a6b8a;
+    --accent: #f1b722;
+    --accent2: #ff6b6b;
+    --light: #f8f9fa;
+    --dark: #212529;
+}
 
-.header {  
-    display: flex;  
-    justify-content: space-between;  
-    align-items: center;  
-    padding: 20px;  
-    background-color: #42b549; /* Warna hijau Tokopedia */  
-    color: white;  
-}  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-.logo {  
-    font-size: 24px;  
-    font-weight: bold;  
-}  
+body {
+    background-color: var(--light);
+    line-height: 1.7;
+    color: var(--dark);
+}
 
-.nav ul {  
-    list-style: none;  
-    display: flex;  
-    gap: 20px;  
-}  
+.header {
+    background: rgba(42, 59, 77, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
 
-.nav ul li a {  
-    color: white;  
-    text-decoration: none
+.nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.nav a:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.profile {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-content {
+    position: relative;
+    z-index: 1;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    overflow: hidden;
+    border: 4px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.accent-text {
+    color: var(--accent);
+}
+
+.tagline {
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(241, 183, 34, 0.3);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.skill-bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+.education-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateX(10px);
+}
+
+.experience-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.profile-image {
+    animation: float 4s ease-in-out infinite;
+}
