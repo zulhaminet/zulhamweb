@@ -4,7 +4,9 @@
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>My Certificate</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>  
+        /* Gaya yang sama sebelumnya dipertahankan */
         body {  
             font-family: 'Arial', sans-serif;  
             background-color: #f3f2ef;  
@@ -31,40 +33,64 @@
             margin-top: 20px;  
             margin-bottom: 10px;  
         }  
-        img {  
-            max-width: 100%;  
-            height: auto;  
-            border-radius: 5px;  
-            margin-bottom: 20px;  
-        }  
         .nav {  
             margin-top: 30px;  
             text-align: center;  
         }  
         .nav a {  
-            margin: 0 10px;  
-            text-decoration: none;  
-            color: #0a66c2;  
-            font-weight: bold;  
-        }  
-        .nav a:hover {  
-            text-decoration: underline;  
-        }  
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 20px;
+            border-radius: 25px;
+            background-color: #0a66c2;
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .nav a:hover {
+            background-color: #084484;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .nav a i {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        .nav a span {
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
     </style>  
 </head>  
 <body>  
     <div class="container">  
         <h1>Welcome To My Website</h1>
-    <h2>Feby Zulham Index</h2>
+        <h2>Feby Zulham Index</h2>
         <hr>
         <div class="nav">  
-            <a href="./Certificate.html">Certificate</a>   
-            <a href="./public/about.html">About Me</a>  
-            <a href="https://www.linkedin.com/in/feby-zulham-adami-934a50153/">Contact Me</a>   
+            <a href="./Certificate.html">
+                <i class="fas fa-certificate"></i>
+                <span>Certificate</span>
+            </a>   
+            <a href="./public/about.html">
+                <i class="fas fa-user"></i>
+                <span>About Me</span>
+            </a>  
+            <a href="https://www.linkedin.com/in/feby-zulham-adami-934a50153/">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>   
         </div>  
     </div>  
+    <footer>
+        <p>© Feby Zulham Adami. All rights reserved.</p>
+    </footer>
 </body>  
 </html>
-<footer>
-    <p>© Feby Zulham Adami. All rights reserved.</p>
-  </footer>
