@@ -117,6 +117,33 @@
             transform: scale(1.03);
         }
 
+        .popup {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .certificate-item:hover .popup {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
+
         .nav {
             margin-top: 50px;
             text-align: center;
@@ -179,15 +206,27 @@
             <div class="certificate-grid">
                 <div class="certificate-item">
                     <img src="./assets/images/ACA Big Data Certification.png" alt="ACA Big Data Certification">
+                    <div class="popup">
+                        <img src="./assets/images/ACA Big Data Certification.png" alt="ACA Big Data Certification">
+                    </div>
                 </div>
                 <div class="certificate-item">
                     <img src="./assets/images/ACA Cloud Computing Certification.png" alt="ACA Cloud Computing Certification">
+                    <div class="popup">
+                        <img src="./assets/images/ACA Cloud Computing Certification.png" alt="ACA Cloud Computing Certification">
+                    </div>
                 </div>
                 <div class="certificate-item">
                     <img src="./assets/images/ACA Cloud Security Certification.png" alt="ACA Cloud Security Certification">
+                    <div class="popup">
+                        <img src="./assets/images/ACA Cloud Security Certification.png" alt="ACA Cloud Security Certification">
+                    </div>
                 </div>
                 <div class="certificate-item">
                     <img src="./assets/images/ACP Cloud Computing Certification.png" alt="ACP Cloud Computing Certification">
+                    <div class="popup">
+                        <img src="./assets/images/ACP Cloud Computing Certification.png" alt="ACP Cloud Computing Certification">
+                    </div>
                 </div>
             </div>
         </div>
@@ -197,6 +236,9 @@
             <div class="certificate-grid">
                 <div class="certificate-item">
                     <img src="./assets/images/AWS Certified Cloud Practitioner certificate.png" alt="AWS Certified Cloud Practitioner">
+                    <div class="popup">
+                        <img src="./assets/images/AWS Certified Cloud Practitioner certificate.png" alt="AWS Certified Cloud Practitioner">
+                    </div>
                 </div>
             </div>
         </div>
@@ -206,6 +248,9 @@
             <div class="certificate-grid">
                 <div class="certificate-item">
                     <img src="./assets/images/FEBYZULHAM ADAMI-CyberOps Associa-certificate conv 1.jpeg" alt="Cisco CyberOps Associate">
+                    <div class="popup">
+                        <img src="./assets/images/FEBYZULHAM ADAMI-CyberOps Associa-certificate conv 1.jpeg" alt="Cisco CyberOps Associate">
+                    </div>
                 </div>
             </div>
         </div>
@@ -216,5 +261,27 @@
             <a href="./public/contact.html">📩 Contact</a>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const certificateItems = document.querySelectorAll('.certificate-item');
+
+            certificateItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const popup = item.querySelector('.popup');
+                    setTimeout(() => {
+                        popup.style.opacity = '1';
+                        popup.style.visibility = 'visible';
+                    }, 300); // Adjust the delay as needed
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    const popup = item.querySelector('.popup');
+                    popup.style.opacity = '0';
+                    popup.style.visibility = 'hidden';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
