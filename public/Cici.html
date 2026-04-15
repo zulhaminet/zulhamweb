@@ -6,17 +6,30 @@
     <title>Wirdatil Qudsi - CV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Animasi Keyframes */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
         :root {
             --primary-color: #2b6cb0;
             --bg-color: #f0f4f8;
             --text-color: #2d3748;
             --card-bg: white;
+            --accent-color: #4299e1;
         }
 
         .dark-mode {
             --bg-color: #1a202c;
             --text-color: #e2e8f0;
             --card-bg: #2d3748;
+            --primary-color: #63b3ed;
         }
 
         * {
@@ -24,12 +37,13 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
+            line-height: 1.6;
         }
 
         .controls {
@@ -49,6 +63,7 @@
             border-radius: 5px;
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            font-weight: bold;
         }
 
         .container {
@@ -57,17 +72,15 @@
             padding: 2rem;
         }
 
+        /* Header */
         .header {
             text-align: center;
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, #2b6cb0, #4299e1);
             color: white;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 3rem 2rem;
+            border-radius: 15px;
             margin-bottom: 2rem;
-            position: relative;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .profile-photo {
@@ -77,122 +90,109 @@
             border: 4px solid white;
             margin-bottom: 1.5rem;
             object-fit: cover;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .profile-photo:hover {
-            transform: scale(1.05);
+            transform: scale(1.1) rotate(5deg);
         }
+
+        /* Social & Contact */
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .social-link {
+            font-size: 1.5rem;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover { transform: translateY(-5px); }
 
         .contact-info {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
+        /* Cards Layout */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            animation: fadeInUp 0.8s ease-out both;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
 
-        .language-skills {
-            display: flex;
-            gap: 1rem;
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 5px;
+            font-size: 1.25rem;
         }
 
-        .language-tag {
-            background: #ebf8ff;
-            color: #2b6cb0;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-        }
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.5rem; }
 
+        /* Experience & Education Specific */
         .timeline-item {
-            border-left: 2px solid #e2e8f0;
+            border-left: 3px solid var(--accent-color);
             padding-left: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             position: relative;
+            animation: slideInLeft 0.8s ease-out both;
         }
 
         .timeline-item::before {
             content: '';
             width: 12px;
             height: 12px;
-            background: #2b6cb0;
+            background: var(--accent-color);
             border-radius: 50%;
             position: absolute;
-            left: -7px;
+            left: -8px;
             top: 5px;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-
-        .social-link {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            transition: transform 0.3s;
-        }
-
-        .social-link:hover {
-            transform: scale(1.2);
+        .language-tag {
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
         }
 
         @media (max-width: 768px) {
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .grid {
-                grid-template-columns: 1fr;
-            }
+            .contact-info { flex-direction: column; align-items: center; }
         }
 
-        @media print {
-            .controls, .social-links {
-                display: none !important;
-            }
-            
-            .card {
-                box-shadow: none;
-                border: 1px solid #ddd;
-            }
-            
-            body {
-                background: white;
-                color: black;
-                font-size: 12pt;
-            }
-        }
+        /* Staggered Animation Delay */
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
@@ -206,29 +206,25 @@
             <img src="../assets/images/Foto Profile Cici.png" alt="Wirdatil Qudsi" class="profile-photo">
             <h1>WIRDATIL QUDSI</h1>
             <p>Curriculum Vitae</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+
+            <div class="contact-info">
+                <div><i class="fas fa-phone"></i> 0813-6425-9554</div>
+                <div><i class="fas fa-envelope"></i> wirdatilqudsi@gmail.com</div>
+                <div><i class="fas fa-map-marker-alt"></i> Jl.Pete III No.189 RT.6 RW.6, Jakarta Selatan</div>
+            </div>
         </header>
 
-        <div class="social-links">
-            <a href="#" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+        <div class="card" style="margin-bottom: 1.5rem; width: 100%;">
+            <h2>PROFESSIONAL PROFILE</h2>
+            <p>Hello! My name is Wirdatil Qudsi, usually called Cici. I Graduated from Bung Hatta University (Japanese Literature Studies). After graduated from Bung Hatta University, Currently I work at PT. Asumi Bahasa Asia Center (ABAC), Jakarta. My Job is teaching for Japanese people working in Indonesia or Indonesian students who want to go to Japan or are studying Japanese in Indonesia. I also teach privately for Indonesian students and for Japanese.</p>
         </div>
 
-        <div class="contact-info">
-            <div class="contact-item">📞 0813-6425-9554</div>
-            <div class="contact-item">📧 wirdatilqudsi@gmail.com</div>
-            <div class="contact-item">📍 Jl.Pete III No.189 RT.6 RW.6, Jakarta Selatan</div>
-        </div>
-
-        <div class="grid">
-            <div class="card">
-                <h2>PROFESSIONAL PROFILE</h2>
-                <p>Hello! My name is Wirdatil Qudsi, usually called Cici. 
-                   I Graduated from Bung Hatta University (Japanese Literature Studies). After graduated from Bung Hatta University, Currently I work at PT. Asumi Bahasa Asia Center (ABAC), Jakarta. My Job is teaching for Japanese people working in Indonesia or Indonesian students who want to go to Japan or are studying Japanese in Indonesia. 
-                   I also teach privately for Indonesian students and for Japanese.</p>
-            </div>
-        </div>
-        
         <div class="grid">
             <div class="card">
                 <h2>Expertise</h2>
@@ -237,84 +233,90 @@
                     <li>Customer Service</li>
                     <li>Japanese Literature</li>
                     <li>Daily Report</li>
-                    
                 </ul>
             </div>
-        </div>
-            <div class="grid">
-                <div class="card">
-                    <h2>Certificate</h2>
-                    <ul>
-                        <li>Japanese Language Proficiency Test N3</li>
-                        <li>PMKM at Jorong Koto Alam Padang</li>
-                        <li>Japanese Speech Competition Sumatera Barat</li>
-                        <li>IPPI MTAS KKN PPM Bung Hatta University</li>
-                        <li>International Cultural Committee 13th Bung Hatta University</li>
-                    </ul>
-                </div>
 
             <div class="card">
-                <h2>Education</h2>
-                <li>Japanese Literature / Bung Hatta University Bachelor Degree / 2010 - 2015</li>
-                <li>1 State High School Enam Lingkung Social / 2006 - 2009</li>
-                <li>1 State Junior High School Enam Lingkung 2003 - 2006</li>
-                <li>46 State Elementary School Sarang Gagak 1997 - 2003</li>
-            </div>
-        </div>
-
-        <div class="card">
-            <h2>Language Skills</h2>
-            <div class="language-skills">
+                <h2>Language Skills</h2>
                 <span class="language-tag">Japanese (Active)</span>
                 <span class="language-tag">English (Passive)</span>
             </div>
         </div>
-        
-        <div class="card">
-            <h2>Working Experience</h2>
-            
-            <div class="timeline-item">
-            <h3>PT. Unitika Trading Indonesia</h3>
-            <p>Nov 2022 - Present </p>
-            <ul>
-                <li>Quality Control </li>
-                <li>Production Support</li>
-            </ul>
-        </div>
 
-            <div class="timeline-item">
-                <h3>LPK Hadetama and  PT.Asumi Bahasa Asia Center </h3>
-                <p>April 2016 - Present (Part-time)</p>
+        <div class="card" style="margin-bottom: 1.5rem;">
+            <h2>Certificate</h2>
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
                 <ul>
-                    <li>Teaching Indonesian to Japanese students and teaching Japanese to Indonesian students.</li>
-                    <li>Receive a call from a Japanese student or an Indonesian student who will book / cancel the class. And explain about the class to new people who are interested in studying at our school using Japanese or Indonesian.</li>
-                    <li>Receive guests who want to ask about class.</li>
+                    <li>Japanese Language Proficiency Test N3</li>
+                    <li>PMKM at Jorong Koto Alam Padang</li>
+                    <li>Japanese Speech Competition Sumatera Barat</li>
+                </ul>
+                <ul>
+                    <li>IPPI MTAS KKN PPM Bung Hatta University</li>
+                    <li>International Cultural Committee 13th Bung Hatta University</li>
                 </ul>
             </div>
+        </div>
 
-    
-            <div class="timeline-item">
-                <h2>Private Teaching</h2>
-                <p>Oktober 2018 - Present<br>
-             <li>Teaching Indonesian to Japanese students and teaching Japanese</li>
-             </div>
-         </div>
+        <div class="grid">
+            <div class="card">
+                <h2>Education</h2>
+                <div class="timeline-item">
+                    <strong>Bung Hatta University</strong>
+                    <p>Japanese Literature / Bachelor Degree / 2010 - 2015</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>1 State High School Enam Lingkung</strong>
+                    <p>Social / 2006 - 2009</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>1 State Junior High School Enam Lingkung</strong>
+                    <p>2003 - 2006</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>46 State Elementary School Sarang Gagak</strong>
+                    <p>1997 - 2003</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Working Experience</h2>
+                <div class="timeline-item">
+                    <h3>PT. Unitika Trading Indonesia</h3>
+                    <p><em>Nov 2022 - Present</em></p>
+                    <ul>
+                        <li>Quality Control</li>
+                        <li>Production Support</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>LPK Hadetama and PT. Asumi Bahasa Asia Center</h3>
+                    <p><em>April 2016 - Present (Part-time)</em></p>
+                    <ul>
+                        <li>Teaching Indonesian to Japanese students and teaching Japanese to Indonesian students.</li>
+                        <li>Receive a call from a Japanese student or an Indonesian student who will book / cancel the class. And explain about the class to new people who are interested in studying at our school using Japanese or Indonesian.</li>
+                        <li>Receive guests who want to ask about class.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Private Teaching</h3>
+                    <p><em>Oktober 2018 - Present</em></p>
+                    <ul>
+                        <li>Teaching Indonesian to Japanese students and teaching Japanese</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // Dark Mode Toggle
         const darkModeToggle = document.getElementById('darkModeToggle');
         darkModeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            darkModeToggle.textContent = document.body.classList.contains('dark-mode') 
-                ? '🌞 Light Mode' 
-                : '🌙 Dark Mode';
+            darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '🌞 Light Mode' : '🌙 Dark Mode';
         });
-
-        // Initialize dark mode state
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark-mode');
-            darkModeToggle.textContent = '🌞 Light Mode';
-        }
     </script>
 </body>
 </html>
