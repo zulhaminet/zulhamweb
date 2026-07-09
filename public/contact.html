@@ -1,11 +1,157 @@
-<h1>Contact Me</h1>
-<p>Tel: +123456789</p>
-<p>Email: me@gmail.com</p>
-<p>Address:</p>
-<p>
-  123 North Street<br />
-  Some City<br />
-  Some Country <br />
-</p>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <!-- Menggunakan Font Awesome untuk ikon modern -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
 
-<a href="../index.html">Home</a> 
+    body {
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Card Container dengan Animasi Muncul (Fade In Up) */
+    .contact-card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    h1 {
+      color: #333333;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      position: relative;
+    }
+
+    /* Garis dekoratif di bawah judul */
+    h1::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: #4a90e2;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Wrapper untuk Item Kontak */
+    .contact-info {
+      text-align: left;
+      margin-bottom: 35px;
+    }
+
+    /* Desain Baris Kontak dengan Transisi Halus */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      margin-bottom: 15px;
+      background: #f8fafc;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #4a5568;
+    }
+
+    /* Efek Interaktif (Hover) saat Kursor di Atas Item */
+    .contact-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(74, 144, 226, 0.15);
+      background: #ffffff;
+      border-left: 4px solid #4a90e2;
+    }
+
+    /* Desain Ikon */
+    .contact-item i {
+      font-size: 1.25rem;
+      color: #4a90e2;
+      margin-right: 15px;
+      width: 25px;
+      text-align: center;
+    }
+
+    .contact-item p {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* Tombol Navigasi Home */
+    .btn-home {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #4a90e2;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+    }
+
+    /* Efek Animasi Tombol Home */
+    .btn-home:hover {
+      background: #357abd;
+      box-shadow: 0 6px 15px rgba(53, 122, 189, 0.4);
+      transform: scale(1.05);
+    }
+
+    /* Keyframes untuk Animasi Masuk Halaman */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-card">
+    <h1>Contact Me</h1>
+    
+    <div class="contact-info">
+      <!-- WhatsApp Link (Langsung buka aplikasi chat dengan isi pesan otomatis) -->
+      <a href="https://wa.me/6285215668202?text=Halo%20Feby,%20saya%20ingin%20menghubungi%20Anda." target="_blank" class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <p>0852 1566 8202</p>
+      </a>
+
+      <!-- Email Link (Langsung buka aplikasi Gmail/Email default) -->
+      <a href="mailto:febyzulham@gmail.com" class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <p>febyzulham@gmail.com</p>
+      </a>
+    </div>
+
+    <!-- Tombol Kembali ke Home -->
+    <a href="../index.html" class="btn-home">
+      <i class="fas fa-home" style="color: #fff; margin-right: 8px; font-size: 0.9rem;"></i>Home
+    </a>
+  </div>
+
+</body>
+</html>
